@@ -51,3 +51,5 @@ textarea{width:100%;background:rgba(255,255,255,.08);border:1px solid var(--line
 
 .pre{display:block;font-size:.42em;letter-spacing:.32em;color:var(--acc);margin:0 0 .08em .06em;line-height:1.1}
 .lg{text-align:center}
+
+.card .jh{margin:4px 0 -4px;font-size:12px;color:var(--dim)}

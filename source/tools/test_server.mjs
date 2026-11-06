@@ -1,4 +1,4 @@
 import { createRequire } from 'module'; const require = createRequire(import.meta.url); const WebSocket = require('ws');
-const ws = new WebSocket('ws://127.0.0.1:8123'); const log = []; let me;
+const ws = new WebSocket('ws://127.0.0.1:8098'); const log = []; let me;
 const s = m => ws.send(JSON.stringify(m)); ws.on('open', () => s({ t: 'create', name: 'Tes', key: 'k1', look: {} }));
 ws.on('message', r => { const m = JSON.parse(r); if (m.t === 'welcome') { me = m; console.log('welcome', m.code, 'pos', m.me.x.toFixed(1), m.me.z.toFixed(1), 'parts', Object.keys(m.st.parts).length, 'inv', m.me.inv.filter(Boolean).map(i => i.id).join()); s({ t: 'pose', x: m.me.x, y: m.me.y, z: m.me.z, yaw: 0 }); s({ t: 'craft', id: 'rope' }); } else if (m.t === 's') { if (!log.length) { log.push(1); console.log('snap players', m.p.length, 'animals near', m.a.length, 'time', m.tm); setTimeout(() => process.exit(0), 300); } } else if (m.t === 'toast') console.log('toast', m.m); });

@@ -64,7 +64,7 @@ export class Room {
   join(ws, msg) {
     const key = String(msg.key || Math.random()), name = String(msg.name || 'Survivor').slice(0, 16); let p = this.st.players[key]; if (!p) p = this.st.players[key] = this.newPlayer(key, name, msg.look || {}); p.name = name; if (msg.look) p.look = msg.look;
     const c = { ws, p, id: this.nextId++, pose: [p.x, p.y, p.z, p.yaw, 0, 0, 0], car: null, carry: null }; c.pid = c.id; p.id = c.id; p.conn = c; p.veh = null; this.clients.set(ws, c); this.lastActive = Date.now();
-    this.send(p, { t: 'welcome', id: c.id, code: this.code, me: this.pub(p, true), st: this.full(), others: [...this.clients.values()].filter(o => o !== c).map(o => this.pub(o.p)) });
+    this.send(p, { t: 'welcome', id: c.id, code: this.dispCode || this.code, url: this.urlFn ? this.urlFn() : null, me: this.pub(p, true), st: this.full(), others: [...this.clients.values()].filter(o => o !== c).map(o => this.pub(o.p)) });
     this.broadcast({ t: 'join', p: this.pub(p) }, p); this.broadcast({ t: 'chat', sys: 1, m: `${name} bergabung` }, p); return c;
   }
   pub(p, me) { const o = { id: p.id, name: p.name, look: p.look, x: p.x, y: p.y, z: p.z, yaw: p.yaw, dead: p.dead }; if (me) Object.assign(o, { inv: p.inv, sel: p.sel, hp: p.hp, food: p.food, water: p.water, bed: p.bed, stats: p.stats }); return o; }
