@@ -48,3 +48,6 @@ textarea{width:100%;background:rgba(255,255,255,.08);border:1px solid var(--line
 #stats{left:max(18px,env(safe-area-inset-left));top:max(16px,env(safe-area-inset-top))}#tr{right:max(18px,env(safe-area-inset-right));top:max(14px,env(safe-area-inset-top))}
 @media (max-width:760px),(max-height:520px){#comp{display:block;top:max(10px,env(safe-area-inset-top));width:30vw;height:20px}#compI span{font-size:10px}#compI span.m{font-size:12px}#stats{left:max(10px,env(safe-area-inset-left));top:max(10px,env(safe-area-inset-top))}#tr{right:max(10px,env(safe-area-inset-right));top:max(8px,env(safe-area-inset-top))}}
 @media (orientation:portrait) and (max-width:760px){#comp{top:calc(max(10px,env(safe-area-inset-top)) + 104px);width:64vw}#obj{max-width:150px}}
+
+.pre{display:block;font-size:.42em;letter-spacing:.32em;color:var(--acc);margin:0 0 .08em .06em;line-height:1.1}
+.lg{text-align:center}

@@ -1,4 +1,4 @@
-# Terdampar
+# Catlyn Terdampar
 
 Game survival 3D di pulau terpencil. Versi solo ini jalan langsung di browser HP, progress tersimpan di browser.
 

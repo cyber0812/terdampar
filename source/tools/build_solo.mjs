@@ -16,7 +16,7 @@ for(const f of (function w(d){return fs.readdirSync(d,{withFileTypes:true}).flat
 for(const f of (function w(d){return fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?w(d+'/'+e.name):[d+'/'+e.name])})(D))if(/\.(glb|bin)$/.test(f)){fs.writeFileSync(f+'.json',JSON.stringify(fs.readFileSync(f).toString('base64')));fs.rmSync(f)}
 // page for the Artifact wrapper: no doctype/html/head/body
 let h=fs.readFileSync(root+'/public/index.html','utf8');
-const head=`<title>Terdampar</title>\n<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">\n<link rel="stylesheet" href="style.css">\n<style>:root{color-scheme:dark;background:#0a1419}</style>\n`;
+const head=`<title>Catlyn Terdampar</title>\n<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">\n<link rel="stylesheet" href="style.css">\n<style>:root{color-scheme:dark;background:#0a1419}</style>\n`;
 const body=h.slice(h.indexOf('<body>')+6,h.indexOf('</body>'));
 fs.writeFileSync(D+'/page.html',head+body);
 // local test page keeps a real document

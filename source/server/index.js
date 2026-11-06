@@ -33,7 +33,7 @@ wss.on('connection', ws => {
 const DT = .05; setInterval(() => { for (const [code, r] of rooms) { if (r.clients.size || Date.now() - r.lastActive < 600000) { if (r.clients.size) r.lastActive = Date.now(); r.step(DT); } else { r.save(); rooms.delete(code); } } }, 50);
 srv.listen(PORT, '0.0.0.0', () => {
   const ips = Object.values(os.networkInterfaces()).flat().filter(i => i && i.family === 'IPv4' && !i.internal).map(i => i.address);
-  console.log('\n  ==============================================\n   TERDAMPAR  -  server jalan\n  ==============================================\n');
+  console.log('\n  ==============================================\n   CATLYN TERDAMPAR  -  server jalan\n  ==============================================\n');
   console.log(`   Di laptop ini : http://localhost:${PORT}`); for (const ip of ips) console.log(`   HP / teman WiFi: http://${ip}:${PORT}`); console.log('\n   Biarkan jendela ini terbuka selama main.\n');
 });
 process.on('SIGINT', () => { for (const r of rooms.values()) r.save(); process.exit(0); });
