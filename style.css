@@ -40,3 +40,11 @@ canvas#c{position:fixed;inset:0;width:100vw;height:100vh;display:block}
 .ghost{padding:8px;border-radius:10px;color:var(--dim);background:rgba(255,255,255,.07);font-size:13px}
 @media (orientation:portrait){#lobby{justify-content:flex-start;padding-top:max(20px,env(safe-area-inset-top))}#joy{left:max(12px,env(safe-area-inset-left));bottom:calc(68px + env(safe-area-inset-bottom));width:112px;height:112px}#tb{right:max(10px,env(safe-area-inset-right));bottom:calc(68px + env(safe-area-inset-bottom));grid-template-columns:repeat(4,44px);gap:6px}#tb button{width:44px;height:44px;font-size:16px}#tb button.big{font-size:20px}#stats{top:max(10px,env(safe-area-inset-top))}#tr{top:max(8px,env(safe-area-inset-top));max-width:150px}#prompt{white-space:normal;max-width:82vw;text-align:center}.bgrid{grid-template-columns:1fr}.cols>div{min-width:0}.pbox{height:100%}}
 .tabs{padding-right:46px}
+
+#wp{position:absolute;left:0;top:0;display:none;flex-direction:column;align-items:center;gap:1px;font-size:12px;font-weight:800;white-space:nowrap;text-shadow:0 1px 3px #000,0 0 6px rgba(0,0,0,.6);will-change:transform;pointer-events:none}#wp i{font-style:normal;color:var(--acc);font-size:18px;line-height:1;display:block}
+#obj small{display:block;font-size:11px;color:#d8cfbb;font-weight:600;margin-top:1px}
+#tb button.txt{font-size:11px;font-weight:800}#tb button.dim{opacity:.5}
+textarea{width:100%;background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:7px;font:inherit;font-size:12px;user-select:text;-webkit-user-select:text;margin-top:6px;outline:0}
+#stats{left:max(18px,env(safe-area-inset-left));top:max(16px,env(safe-area-inset-top))}#tr{right:max(18px,env(safe-area-inset-right));top:max(14px,env(safe-area-inset-top))}
+@media (max-width:760px),(max-height:520px){#comp{display:block;top:max(10px,env(safe-area-inset-top));width:30vw;height:20px}#compI span{font-size:10px}#compI span.m{font-size:12px}#stats{left:max(10px,env(safe-area-inset-left));top:max(10px,env(safe-area-inset-top))}#tr{right:max(10px,env(safe-area-inset-right));top:max(8px,env(safe-area-inset-top))}}
+@media (orientation:portrait) and (max-width:760px){#comp{top:calc(max(10px,env(safe-area-inset-top)) + 104px);width:64vw}#obj{max-width:150px}}
