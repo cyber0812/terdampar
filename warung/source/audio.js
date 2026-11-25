@@ -43,6 +43,7 @@ export function sfx(n) {
       case 'horn': tone(392, 0.14, 'square', 0.12); tone(392, 0.2, 'square', 0.12, 0.2); break;
       case 'ping': tone(988, 0.12, 'sine', 0.25); tone(1318, 0.18, 'sine', 0.2, 0.1); break;
       case 'tap': tone(520, 0.04, 'triangle', 0.15); break;
+      case 'bag': noise(0.12, 0.35, 900); tone(300, 0.08, 'triangle', 0.2, 0.02); break;
     }
   } catch (e) {}
 }
